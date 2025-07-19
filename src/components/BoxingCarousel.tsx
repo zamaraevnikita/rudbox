@@ -58,10 +58,10 @@ export const BoxingCarousel = ({
       <div className="overflow-hidden rounded-lg">
         <div 
           className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          style={{ transform: `translateX(-${currentIndex * (100/3)}%)` }}
         >
           {items.map((item, index) => (
-            <div key={item.id} className="w-full flex-shrink-0">
+            <div key={item.id} className="w-1/3 flex-shrink-0 px-2">
               <Card className="boxing-card border-0">
                 <CardContent className="p-0 relative group">
                   <img

@@ -92,11 +92,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-black mb-6 text-white">
-            <span className="text-glow">PINK</span>
+            <span className="text-glow">RUD</span>
+            <span className="text-primary">BOX</span>
             <br />
-            <span className="text-primary">PUNCH</span>
-            <br />
-            <span className="text-white">CLUB</span>
+            <span className="text-white">GYM</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 font-medium">
             Сила • Стиль • Характер
@@ -120,7 +119,7 @@ const Index = () => {
                 О нас
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Pink Punch Club — это не просто спортзал, это место, где рождаются чемпионы. 
+                RudBox Gym — это не просто спортзал, это место, где рождаются чемпионы. 
                 Мы объединяем профессиональный подход к боксу с современными методиками тренировок.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -234,7 +233,7 @@ const Index = () => {
             {/* Logo and Description */}
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold text-primary mb-4">
-                Pink Punch Club
+                RudBox Gym
               </h3>
               <p className="text-muted-foreground mb-6 max-w-md">
                 Профессиональный бокс-клуб с современным подходом к тренировкам. 
@@ -289,7 +288,7 @@ const Index = () => {
           </div>
 
           <div className="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Pink Punch Club. Все права защищены.</p>
+            <p>&copy; 2024 RudBox Gym. Все права защищены.</p>
           </div>
         </div>
       </footer>

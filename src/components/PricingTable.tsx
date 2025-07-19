@@ -14,179 +14,180 @@ interface PricingOption {
   badge?: string;
 }
 
-const pricingOptions: PricingOption[] = [
+const mensPricing = [
   {
-    title: "Разовое занятие",
-    price: "1500",
+    title: "Пробная тренировка",
+    price: "700",
     period: "за занятие",
     description: "Попробуйте наш клуб",
-    features: [
-      "1 тренировка",
-      "Консультация тренера",
-      "Использование оборудования",
-      "Раздевалка и душ"
-    ]
+    features: ["1 тренировка", "Консультация тренера", "Использование оборудования"]
   },
   {
-    title: "Месячный абонемент",
-    price: "8000",
+    title: "8 тренировок",
+    price: "5000",
     period: "в месяц",
-    description: "Оптимальный выбор для начала",
-    features: [
-      "8 тренировок в месяц",
-      "Персональная программа",
-      "Групповые занятия",
-      "Раздевалка и душ",
-      "Консультации по питанию"
-    ],
+    description: "Стандартный пакет для мужчин",
+    features: ["8 тренировок в месяц", "Групповые занятия", "Раздевалка и душ"],
     popular: true
   },
   {
-    title: "3 месяца",
-    price: "20000",
-    period: "за 3 месяца",
-    description: "Серьёзный результат",
-    features: [
-      "Безлимитные тренировки",
-      "Персональный тренер",
-      "Все групповые программы",
-      "Индивидуальный план питания",
-      "Спортивные добавки",
-      "Заморозка абонемента"
-    ],
-    badge: "Скидка 15%"
-  },
-  {
-    title: "6 месяцев",
-    price: "35000",
-    period: "за 6 месяцев",
-    description: "Максимальный результат",
-    features: [
-      "Безлимитные тренировки",
-      "Персональный тренер",
-      "Все программы клуба",
-      "Индивидуальное питание",
-      "Спортивные добавки",
-      "Участие в соревнованиях",
-      "Массаж и восстановление"
-    ],
-    badge: "Скидка 25%"
+    title: "12 тренировок",
+    price: "6000",
+    period: "в месяц",
+    description: "Интенсивные тренировки",
+    features: ["12 тренировок в месяц", "Персональная программа", "Все групповые программы"]
   }
 ];
 
-const specialCategories = [
+const womensPricing = [
   {
-    category: "Детские группы (6-16 лет)",
+    title: "Пробная тренировка",
+    price: "700",
+    period: "за занятие",
+    description: "Попробуйте наш клуб",
+    features: ["1 тренировка", "Консультация тренера", "Использование оборудования"]
+  },
+  {
+    title: "8 тренировок",
     price: "5000",
     period: "в месяц",
-    description: "Безопасные тренировки для детей"
-  },
-  {
-    category: "Женские группы",
-    price: "6000",
-    period: "в месяц", 
-    description: "Фитнес-бокс и самооборона"
-  },
-  {
-    category: "Для начинающих",
-    price: "6500",
-    period: "в месяц",
-    description: "Основы бокса с нуля"
+    description: "Фитнес-бокс и самооборона",
+    features: ["8 тренировок в месяц", "Женские группы", "Раздевалка и душ"],
+    popular: true
   }
 ];
 
-export const PricingTable = () => {
-  return (
-    <div className="space-y-12">
-      {/* Main pricing options */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {pricingOptions.map((option, index) => (
-          <Card 
-            key={index} 
-            className={`boxing-card relative ${option.popular ? 'ring-2 ring-primary' : ''}`}
-          >
-            {option.badge && (
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
-                {option.badge}
-              </Badge>
-            )}
-            {option.popular && (
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
-                Популярный
-              </Badge>
-            )}
-            
-            <CardHeader className="text-center pb-2">
-              <CardTitle className="text-xl font-bold text-foreground">
-                {option.title}
-              </CardTitle>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-primary">
-                  {option.price}
-                </span>
+const kidsPricing = [
+  {
+    title: "Пробная тренировка",
+    price: "Бесплатно",
+    period: "",
+    description: "Знакомство с боксом",
+    features: ["1 тренировка", "Безопасные методики", "Консультация для родителей"]
+  },
+  {
+    title: "8 тренировок",
+    price: "4000",
+    period: "в месяц",
+    description: "Детские группы (6-16 лет)",
+    features: ["8 тренировок в месяц", "Возрастные группы", "Безопасные тренировки"],
+    popular: true
+  },
+  {
+    title: "12 тренировок",
+    price: "5000",
+    period: "в месяц",
+    description: "Усиленная программа",
+    features: ["12 тренировок в месяц", "Подготовка к соревнованиям", "Индивидуальный подход"]
+  }
+];
+
+const personalPricing = [
+  {
+    title: "1 тренировка",
+    price: "2000",
+    period: "за тренировку",
+    description: "Индивидуальная работа",
+    features: ["Персональный тренер", "Индивидуальная программа", "Гибкий график"]
+  },
+  {
+    title: "4 тренировки",
+    price: "7000",
+    period: "пакет",
+    description: "Месячный курс",
+    features: ["4 персональные тренировки", "Программа питания", "Экономия 1000₽"],
+    popular: true
+  },
+  {
+    title: "8 тренировок",
+    price: "12000",
+    period: "пакет",
+    description: "Серьёзный результат",
+    features: ["8 персональных тренировок", "Полная программа", "Экономия 4000₽"]
+  },
+  {
+    title: "12 тренировок",
+    price: "16000",
+    period: "пакет",
+    description: "Профессиональная подготовка",
+    features: ["12 персональных тренировок", "Спортивное питание", "Экономия 8000₽"]
+  },
+  {
+    title: "16 тренировок",
+    price: "22000",
+    period: "пакет",
+    description: "Максимальный результат",
+    features: ["16 персональных тренировок", "Полное сопровождение", "Экономия 10000₽"]
+  }
+];
+
+const renderPricingSection = (title: string, items: PricingOption[]) => (
+  <div className="mb-16">
+    <h3 className="text-3xl font-bold text-center mb-8 text-glow">{title}</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {items.map((option, index) => (
+        <Card 
+          key={index} 
+          className={`boxing-card relative ${option.popular ? 'ring-2 ring-primary' : ''}`}
+        >
+          {option.popular && (
+            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
+              Популярный
+            </Badge>
+          )}
+          
+          <CardHeader className="text-center pb-2">
+            <CardTitle className="text-xl font-bold text-foreground">
+              {option.title}
+            </CardTitle>
+            <div className="mt-4">
+              <span className="text-4xl font-bold text-primary">
+                {option.price}
+              </span>
+              {option.price !== "Бесплатно" && (
                 <span className="text-muted-foreground ml-1">₽</span>
+              )}
+              {option.period && (
                 <p className="text-sm text-muted-foreground mt-1">
                   {option.period}
                 </p>
-              </div>
-              <p className="text-sm text-muted-foreground mt-2">
-                {option.description}
-              </p>
-            </CardHeader>
-            
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                {option.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary flex-shrink-0" />
-                    <span className="text-sm text-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <Button 
-                variant={option.popular ? "boxing" : "boxing-outline"} 
-                className="w-full mt-6"
-              >
-                Выбрать план
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* Special categories */}
-      <div>
-        <h3 className="text-2xl font-bold text-center mb-8 text-glow">
-          Специальные предложения
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {specialCategories.map((category, index) => (
-            <Card key={index} className="boxing-card">
-              <CardContent className="p-6 text-center">
-                <h4 className="text-lg font-bold text-foreground mb-2">
-                  {category.category}
-                </h4>
-                <div className="mb-3">
-                  <span className="text-3xl font-bold text-primary">
-                    {category.price}
-                  </span>
-                  <span className="text-muted-foreground ml-1">₽</span>
-                  <p className="text-sm text-muted-foreground">
-                    {category.period}
-                  </p>
+              )}
+            </div>
+            <p className="text-sm text-muted-foreground mt-2">
+              {option.description}
+            </p>
+          </CardHeader>
+          
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              {option.features.map((feature, featureIndex) => (
+                <div key={featureIndex} className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-sm text-foreground">{feature}</span>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {category.description}
-                </p>
-                <Button variant="boxing-outline" className="w-full">
-                  Узнать подробнее
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
+              ))}
+            </div>
+            
+            <Button 
+              variant={option.popular ? "boxing" : "boxing-outline"} 
+              className="w-full mt-6"
+            >
+              Выбрать план
+            </Button>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+);
+
+export const PricingTable = () => {
+  return (
+    <div className="space-y-16">
+      {renderPricingSection("Мужские группы", mensPricing)}
+      {renderPricingSection("Женские группы", womensPricing)}
+      {renderPricingSection("Детские группы", kidsPricing)}
+      {renderPricingSection("Персональные тренировки", personalPricing)}
     </div>
   );
 };
