@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Check } from "lucide-react";
 
 interface PricingOption {
   title: string;
@@ -157,16 +158,16 @@ const renderPricingSection = (title: string, items: PricingOption[]) => (
             </p>
           </CardHeader>
           
-          <CardContent className="pt-0">
-            <div className="space-y-3">
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
               {option.features.map((feature, featureIndex) => (
-                <div key={featureIndex} className="text-center">
-                  <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
-                    <span className="text-sm font-medium text-foreground">{feature}</span>
-                  </div>
+                <div key={featureIndex} className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-sm text-foreground">{feature}</span>
                 </div>
               ))}
             </div>
+            
           </CardContent>
         </Card>
       ))}
@@ -219,13 +220,12 @@ export const PricingTable = () => {
                 </p>
               </CardHeader>
               
-              <CardContent className="pt-0">
-                <div className="space-y-3">
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
                   {option.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="text-center">
-                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
-                        <span className="text-sm font-medium text-foreground">{feature}</span>
-                      </div>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -270,13 +270,12 @@ export const PricingTable = () => {
                 </p>
               </CardHeader>
               
-              <CardContent className="pt-0">
-                <div className="space-y-3">
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
                   {option.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="text-center">
-                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
-                        <span className="text-sm font-medium text-foreground">{feature}</span>
-                      </div>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -321,13 +320,12 @@ export const PricingTable = () => {
                 </p>
               </CardHeader>
               
-              <CardContent className="pt-0">
-                <div className="space-y-3">
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
                   {option.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="text-center">
-                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
-                        <span className="text-sm font-medium text-foreground">{feature}</span>
-                      </div>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -372,13 +370,12 @@ export const PricingTable = () => {
                 </p>
               </CardHeader>
               
-              <CardContent className="pt-0">
-                <div className="space-y-3">
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
                   {option.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="text-center">
-                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
-                        <span className="text-sm font-medium text-foreground">{feature}</span>
-                      </div>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
