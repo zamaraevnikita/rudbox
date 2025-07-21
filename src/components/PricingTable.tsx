@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check } from "lucide-react";
 
 interface PricingOption {
@@ -168,12 +168,6 @@ const renderPricingSection = (title: string, items: PricingOption[]) => (
               ))}
             </div>
             
-            <Button 
-              variant={option.popular ? "boxing" : "boxing-outline"} 
-              className="w-full mt-6"
-            >
-              Выбрать план
-            </Button>
           </CardContent>
         </Card>
       ))}
@@ -183,11 +177,213 @@ const renderPricingSection = (title: string, items: PricingOption[]) => (
 
 export const PricingTable = () => {
   return (
-    <div className="space-y-16">
-      {renderPricingSection("Мужские группы", mensPricing)}
-      {renderPricingSection("Женские группы", womensPricing)}
-      {renderPricingSection("Детские группы", kidsPricing)}
-      {renderPricingSection("Персональные тренировки", personalPricing)}
-    </div>
+    <Tabs defaultValue="mens" className="w-full">
+      <TabsList className="grid w-full grid-cols-4 mb-12">
+        <TabsTrigger value="mens">Мужские группы</TabsTrigger>
+        <TabsTrigger value="womens">Женские группы</TabsTrigger>
+        <TabsTrigger value="kids">Детские группы</TabsTrigger>
+        <TabsTrigger value="personal">Персональные</TabsTrigger>
+      </TabsList>
+      
+      <TabsContent value="mens">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {mensPricing.map((option, index) => (
+            <Card 
+              key={index} 
+              className={`boxing-card relative ${option.popular ? 'ring-2 ring-primary' : ''}`}
+            >
+              {option.popular && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
+                  Популярный
+                </Badge>
+              )}
+              
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-xl font-bold text-foreground">
+                  {option.title}
+                </CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-primary">
+                    {option.price}
+                  </span>
+                  {option.price !== "Бесплатно" && (
+                    <span className="text-muted-foreground ml-1">₽</span>
+                  )}
+                  {option.period && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {option.period}
+                    </p>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {option.description}
+                </p>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  {option.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </TabsContent>
+
+      <TabsContent value="womens">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {womensPricing.map((option, index) => (
+            <Card 
+              key={index} 
+              className={`boxing-card relative ${option.popular ? 'ring-2 ring-primary' : ''}`}
+            >
+              {option.popular && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
+                  Популярный
+                </Badge>
+              )}
+              
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-xl font-bold text-foreground">
+                  {option.title}
+                </CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-primary">
+                    {option.price}
+                  </span>
+                  {option.price !== "Бесплатно" && (
+                    <span className="text-muted-foreground ml-1">₽</span>
+                  )}
+                  {option.period && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {option.period}
+                    </p>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {option.description}
+                </p>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  {option.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </TabsContent>
+
+      <TabsContent value="kids">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {kidsPricing.map((option, index) => (
+            <Card 
+              key={index} 
+              className={`boxing-card relative ${option.popular ? 'ring-2 ring-primary' : ''}`}
+            >
+              {option.popular && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
+                  Популярный
+                </Badge>
+              )}
+              
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-xl font-bold text-foreground">
+                  {option.title}
+                </CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-primary">
+                    {option.price}
+                  </span>
+                  {option.price !== "Бесплатно" && (
+                    <span className="text-muted-foreground ml-1">₽</span>
+                  )}
+                  {option.period && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {option.period}
+                    </p>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {option.description}
+                </p>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  {option.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </TabsContent>
+
+      <TabsContent value="personal">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {personalPricing.map((option, index) => (
+            <Card 
+              key={index} 
+              className={`boxing-card relative ${option.popular ? 'ring-2 ring-primary' : ''}`}
+            >
+              {option.popular && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1">
+                  Популярный
+                </Badge>
+              )}
+              
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-xl font-bold text-foreground">
+                  {option.title}
+                </CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-primary">
+                    {option.price}
+                  </span>
+                  {option.price !== "Бесплатно" && (
+                    <span className="text-muted-foreground ml-1">₽</span>
+                  )}
+                  {option.period && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {option.period}
+                    </p>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {option.description}
+                </p>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  {option.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </TabsContent>
+    </Tabs>
   );
 };

@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BoxingCarousel } from "@/components/BoxingCarousel";
-import { ContactForm } from "@/components/ContactForm";
+
 import { PricingTable } from "@/components/PricingTable";
-import { MapPin, Phone, Mail, Clock, Users, Trophy, Target, Instagram, Facebook, Youtube } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Users, Trophy, Target, Instagram, Facebook, Youtube, MessageCircle, Send } from "lucide-react";
 
 // Import images
 import heroImage from "@/assets/hero-boxing.jpg";
@@ -210,18 +210,62 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact Section */}
       <section className="py-20 px-4 bg-secondary/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-glow">
-            Готовы начать?
+            Связаться с нами
           </h2>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Оставьте заявку на бесплатную пробную тренировку. 
-            Мы покажем вам зал, познакомим с тренерами и составим индивидуальную программу.
+            Выберите удобный способ связи. Мы быстро ответим на все ваши вопросы 
+            и поможем записаться на тренировку.
           </p>
-          <div className="animate-fade-in">
-            <ContactForm />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in">
+            <a 
+              href="https://t.me/rudboxgym" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="boxing-card p-6 hover:scale-105 transition-transform group"
+            >
+              <Send className="h-8 w-8 text-primary mx-auto mb-3 group-hover:text-white transition-colors" />
+              <h3 className="font-semibold text-white group-hover:text-primary transition-colors">Telegram</h3>
+              <p className="text-sm text-muted-foreground mt-1">@rudboxgym</p>
+            </a>
+            
+            <a 
+              href="https://wa.me/79123456789" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="boxing-card p-6 hover:scale-105 transition-transform group"
+            >
+              <MessageCircle className="h-8 w-8 text-primary mx-auto mb-3 group-hover:text-white transition-colors" />
+              <h3 className="font-semibold text-white group-hover:text-primary transition-colors">WhatsApp</h3>
+              <p className="text-sm text-muted-foreground mt-1">+7 912 345-67-89</p>
+            </a>
+            
+            <a 
+              href="https://instagram.com/rudboxgym" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="boxing-card p-6 hover:scale-105 transition-transform group"
+            >
+              <Instagram className="h-8 w-8 text-primary mx-auto mb-3 group-hover:text-white transition-colors" />
+              <h3 className="font-semibold text-white group-hover:text-primary transition-colors">Instagram</h3>
+              <p className="text-sm text-muted-foreground mt-1">@rudboxgym</p>
+            </a>
+            
+            <a 
+              href="https://vk.com/rudboxgym" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="boxing-card p-6 hover:scale-105 transition-transform group"
+            >
+              <div className="h-8 w-8 mx-auto mb-3 flex items-center justify-center">
+                <span className="text-primary font-bold text-xl group-hover:text-white transition-colors">ВК</span>
+              </div>
+              <h3 className="font-semibold text-white group-hover:text-primary transition-colors">ВКонтакте</h3>
+              <p className="text-sm text-muted-foreground mt-1">vk.com/rudboxgym</p>
+            </a>
           </div>
         </div>
       </section>
