@@ -58,32 +58,34 @@ export const BoxingCarousel = ({
       <div className="overflow-hidden rounded-lg">
         <div 
           className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100/3)}%)` }}
+          style={{ 
+            transform: `translateX(-${currentIndex * (100)}%)`,
+          }}
         >
           {items.map((item, index) => (
-            <div key={item.id} className="w-1/3 flex-shrink-0 px-2">
+            <div key={item.id} className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
               <Card className="boxing-card border-0">
                 <CardContent className="p-0 relative group">
                   <img
                     src={item.image}
                     alt={item.title || `Slide ${index + 1}`}
-                    className="w-full h-64 object-cover rounded-lg"
+                    className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg"
                   />
                   {(item.title || item.description || item.subtitle) && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 smooth-transition flex items-end">
-                      <div className="p-6 text-white">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 md:opacity-100 smooth-transition flex items-end">
+                      <div className="p-3 sm:p-4 md:p-6 text-white">
                         {item.subtitle && (
-                          <p className="text-primary text-sm font-semibold uppercase tracking-wide mb-1">
+                          <p className="text-primary text-xs sm:text-sm font-semibold uppercase tracking-wide mb-1">
                             {item.subtitle}
                           </p>
                         )}
                         {item.title && (
-                          <h3 className="text-xl font-bold mb-2 text-glow">
+                          <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 text-glow">
                             {item.title}
                           </h3>
                         )}
                         {item.description && (
-                          <p className="text-sm text-gray-300">
+                          <p className="text-xs sm:text-sm text-gray-300">
                             {item.description}
                           </p>
                         )}
@@ -102,30 +104,30 @@ export const BoxingCarousel = ({
           <Button
             variant="boxing-outline"
             size="icon"
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10"
+            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10"
             onClick={prevSlide}
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-3 w-3 md:h-4 md:w-4" />
           </Button>
 
           <Button
             variant="boxing-outline"
             size="icon"
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10"
+            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 md:w-10 md:h-10"
             onClick={nextSlide}
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-3 w-3 md:h-4 md:w-4" />
           </Button>
         </>
       )}
 
       {items.length > 1 && (
-        <div className="flex justify-center mt-4 space-x-2">
+        <div className="flex justify-center mt-3 md:mt-4 space-x-1 md:space-x-2">
           {items.map((_, index) => (
             <button
               key={index}
               className={cn(
-                "w-3 h-3 rounded-full smooth-transition",
+                "w-2 h-2 md:w-3 md:h-3 rounded-full smooth-transition",
                 index === currentIndex
                   ? "bg-primary glow-shadow"
                   : "bg-gray-600 hover:bg-gray-400"

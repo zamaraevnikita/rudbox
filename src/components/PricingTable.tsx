@@ -178,15 +178,15 @@ const renderPricingSection = (title: string, items: PricingOption[]) => (
 export const PricingTable = () => {
   return (
     <Tabs defaultValue="mens" className="w-full">
-      <TabsList className="grid w-full grid-cols-4 mb-12">
-        <TabsTrigger value="mens">Мужские группы</TabsTrigger>
-        <TabsTrigger value="womens">Женские группы</TabsTrigger>
-        <TabsTrigger value="kids">Детские группы</TabsTrigger>
-        <TabsTrigger value="personal">Персональные</TabsTrigger>
+      <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8 md:mb-12 h-auto">
+        <TabsTrigger value="mens" className="text-xs sm:text-sm px-2 py-3">Мужские</TabsTrigger>
+        <TabsTrigger value="womens" className="text-xs sm:text-sm px-2 py-3">Женские</TabsTrigger>
+        <TabsTrigger value="kids" className="text-xs sm:text-sm px-2 py-3">Детские</TabsTrigger>
+        <TabsTrigger value="personal" className="text-xs sm:text-sm px-2 py-3">Персональные</TabsTrigger>
       </TabsList>
       
       <TabsContent value="mens">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {mensPricing.map((option, index) => (
             <Card 
               key={index} 
@@ -236,7 +236,7 @@ export const PricingTable = () => {
       </TabsContent>
 
       <TabsContent value="womens">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {womensPricing.map((option, index) => (
             <Card 
               key={index} 
@@ -286,7 +286,7 @@ export const PricingTable = () => {
       </TabsContent>
 
       <TabsContent value="kids">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {kidsPricing.map((option, index) => (
             <Card 
               key={index} 
@@ -336,7 +336,7 @@ export const PricingTable = () => {
       </TabsContent>
 
       <TabsContent value="personal">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-4 md:gap-6">
           {personalPricing.map((option, index) => (
             <Card 
               key={index} 
