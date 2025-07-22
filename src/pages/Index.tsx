@@ -94,8 +94,7 @@ const Index = () => {
           <h1 className="text-6xl md:text-8xl font-black mb-6 text-white">
             <span className="text-glow">RUD</span>
             <span className="text-primary">BOX</span>
-            <br />
-            <span className="text-white">GYM</span>
+
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 font-medium">
             Сила • Стиль • Характер
@@ -119,7 +118,7 @@ const Index = () => {
                 О нас
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                RudBox Gym — это не просто спортзал, это место, где рождаются чемпионы. 
+                RudBox — это не просто спортзал, это место, где рождаются чемпионы. 
                 Мы объединяем профессиональный подход к боксу с современными методиками тренировок.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -229,7 +228,7 @@ const Index = () => {
             >
               <Send className="h-8 w-8 text-primary mx-auto mb-3 group-hover:text-white transition-colors" />
               <h3 className="font-semibold text-white group-hover:text-primary transition-colors">Telegram</h3>
-              <p className="text-sm text-muted-foreground mt-1">@rudboxgym</p>
+              <p className="text-sm text-muted-foreground mt-1">@rudbox</p>
             </a>
             
             <a 
@@ -251,7 +250,7 @@ const Index = () => {
             >
               <Instagram className="h-8 w-8 text-primary mx-auto mb-3 group-hover:text-white transition-colors" />
               <h3 className="font-semibold text-white group-hover:text-primary transition-colors">Instagram</h3>
-              <p className="text-sm text-muted-foreground mt-1">@rudboxgym</p>
+              <p className="text-sm text-muted-foreground mt-1">@rudbox</p>
             </a>
             
             <a 
@@ -264,7 +263,7 @@ const Index = () => {
                 <span className="text-primary font-bold text-xl group-hover:text-white transition-colors">ВК</span>
               </div>
               <h3 className="font-semibold text-white group-hover:text-primary transition-colors">ВКонтакте</h3>
-              <p className="text-sm text-muted-foreground mt-1">vk.com/rudboxgym</p>
+              <p className="text-sm text-muted-foreground mt-1">vk.com/rudbox</p>
             </a>
           </div>
         </div>
@@ -277,7 +276,7 @@ const Index = () => {
             {/* Logo and Description */}
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold text-primary mb-4">
-                RudBox Gym
+                RudBox
               </h3>
               <p className="text-muted-foreground mb-6 max-w-md">
                 Профессиональный бокс-клуб с современным подходом к тренировкам. 
@@ -302,7 +301,7 @@ const Index = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-muted-foreground">
                   <MapPin className="h-4 w-4 text-primary" />
-                  <span className="text-sm">ул. Спортивная, 15, Москва</span>
+                  <span className="text-sm">Томск, ул. Ленина, 15</span>
                 </div>
                 <div className="flex items-center space-x-3 text-muted-foreground">
                   <Phone className="h-4 w-4 text-primary" />
@@ -310,7 +309,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-muted-foreground">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-sm">info@pinkpunch.club</span>
+                  <span className="text-sm">info@rudbox.club</span>
                 </div>
               </div>
             </div>
@@ -332,7 +331,7 @@ const Index = () => {
           </div>
 
           <div className="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 RudBox Gym. Все права защищены.</p>
+            <p>&copy; 2025 RudBox. Все права защищены.</p>
           </div>
         </div>
       </footer>
